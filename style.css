@@ -16,7 +16,8 @@ body {
   position: absolute;
   background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
   border-radius: 50%;
-  filter: drop-shadow(0 0 6px lightseagreen);
+  filter: drop-shadow(0 0 8px var(--star-color));
+background: linear-gradient(to bottom, rgba(255,255,255,0), var(--star-color));
   opacity: 0;
   width: calc(var(--size) * 2px);
   height: calc(var(--size) * 100px);
