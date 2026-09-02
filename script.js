@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="night-sky"></div>
-    <script src="script.js"></script>
-</body>
-</html>
+const nightSky = document.getElementById('night-sky');
+const numberOfStars = 25;
+
+for (let i = 0; i < numberOfStars; i++) {
+  const star = document.createElement('div');
+  star.classList.add('star');
+
+  const size = Math.random() * 0.6 + 0.4;
+  const duration = Math.random() * 3 + 2;
+  const delay = Math.random() * 5;
+  const top = Math.random() * 50 - 20;
+  const left = Math.random() * 120 - 10;
+
+  star.style.setProperty('--size', size);
+  star.style.setProperty('--duration', `${duration}s`);
+  star.style.setProperty('--delay', `${delay}s`);
+  star.style.setProperty('--top', `${top}vh`);
+  star.style.setProperty('--left', `${left}vw`);
+
+  nightSky.appendChild(star);
+}
