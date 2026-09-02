@@ -22,3 +22,25 @@ for (let i = 0; i < numberOfStars; i++) {
 
   nightSky.appendChild(star);
 }
+// Função para criar a mini nave com alienígena
+function criarNaveEspacial() {
+  const nightSky = document.getElementById('night-sky');
+  
+  const spaceship = document.createElement('div');
+  spaceship.classList.add('alien-spaceship');
+  spaceship.innerHTML = '🛸👽'; // Nave e alienígena acenando
+  
+  // Posição vertical aleatória na metade superior da tela
+  const randomTop = Math.random() * 40 + 10;
+  spaceship.style.top = `${randomTop}vh`;
+  
+  nightSky.appendChild(spaceship);
+
+  // Remove a nave do HTML depois que a animação termina para não pesar a página
+  setTimeout(() => {
+    spaceship.remove();
+  }, 8000);
+}
+
+// Define o tempo: 3000 milissegundos = 3 segundos (mude para 180000 se quiser exatamente 3 minutos)
+setInterval(criarNaveEspacial, 3000);
