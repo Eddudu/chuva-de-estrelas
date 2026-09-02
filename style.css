@@ -42,3 +42,28 @@ background: linear-gradient(to bottom, rgba(255,255,255,0), var(--star-color));
     opacity: 0;
   }
 }
+.alien-spaceship {
+  position: absolute;
+  font-size: 24px; /* Tamanho da nave/emoji */
+  z-index: 10;
+  left: -50px; /* Começa fora da tela à esquerda */
+  animation: fly-across 8s linear forwards;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.6));
+}
+
+@keyframes fly-across {
+  0% {
+    transform: translateX(0) translateY(0) scaleX(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(110vw) translateY(50px) scaleX(1); /* Cruza a tela inteira */
+    opacity: 0;
+  }
+}
